@@ -6,7 +6,9 @@ const Footer = () => {
     <footer>
       <Container>
         <Row>
-          <Col className='text-center py-3'>CopyRight &copy; socketioChat</Col>
+          <Col className='text-center py-3'>
+            CopyRight &copy; scategories by classpoint
+          </Col>
         </Row>
       </Container>
     </footer>

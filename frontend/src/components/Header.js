@@ -1,4 +1,4 @@
-import React from 'react'
+import { Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
@@ -11,6 +11,8 @@ const Header = () => {
 
   const { userInfo } = userLogin
 
+  console.log('userInfo', userInfo)
+
   const logoutHandler = () => {
     dispatch(logout())
   }
@@ -20,7 +22,7 @@ const Header = () => {
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
-            <Navbar.Brand>React Template</Navbar.Brand>
+            <Navbar.Brand>Scategories ESL</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
@@ -35,11 +37,18 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <LinkContainer to='/login'>
-                  <Nav.Link href='/login'>
-                    <i className='fas fa-user'></i> Sign In
-                  </Nav.Link>
-                </LinkContainer>
+                <Fragment>
+                  <LinkContainer to='/login'>
+                    <Nav.Link eventKey='1' href='/login'>
+                      <i className='fas fa-user'></i> Sign In
+                    </Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to='/register'>
+                    <Nav.Link eventKey='2' href='/register'>
+                      <i className='fas fa-user'></i> Register
+                    </Nav.Link>
+                  </LinkContainer>
+                </Fragment>
               )}
             </Nav>
           </Navbar.Collapse>
