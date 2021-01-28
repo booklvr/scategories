@@ -57,7 +57,6 @@ const CreateGameScreen = () => {
   }
 
   const changeTeamNamesHandler = (name, index) => {
-    
     setTeams(() => {
       const newArray = [...teams]
       newArray[index] = name
@@ -181,8 +180,16 @@ const CreateGameScreen = () => {
             </Form.Group>
           </Form>
           <Row>
-            <Col md={6}>
-              <h3 style={{ textAlign: 'center' }}>Categories</h3>
+            <Col
+              md={6}
+              mr-1
+              style={{ border: '2px solid black', minHeight: '650px' }}
+            >
+              <h3
+                style={{ textAlign: 'center', borderBottom: '1px solid black' }}
+              >
+                Categories
+              </h3>
               <ListGroup>
                 {categories.length > 0 &&
                   categories.map((category, index) => (
@@ -190,7 +197,16 @@ const CreateGameScreen = () => {
                   ))}
               </ListGroup>
             </Col>
-            <Col md={6}></Col>
+            <Col
+              md={5}
+              style={{ border: '2px solid black', minHeight: '650px' }}
+            >
+              <h3
+                style={{ textAlign: 'center', borderBottom: '1px solid black' }}
+              >
+                Options
+              </h3>
+            </Col>
           </Row>
         </Col>
       </Row>
